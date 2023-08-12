@@ -64,6 +64,7 @@ class MMcNK_Queue:
         return self.results
 
     def generate_arrivals_forever(self, end_condition_customers: int = float('inf')):
+
         id_num = 0
         while True:
             # wait for the next customer
@@ -76,8 +77,7 @@ class MMcNK_Queue:
                 continue
 
             # a wild customer appears! Can they fit in the queue?
-            is_free_queue_space = (len(self.queue.items) < self.queue.capacity)
-            if is_free_queue_space:
+            if len(self.queue.items) < self.queue.capacity:
                 # admit to queue and enter process for them
                 self.results.update({id_num: [self.env.now, None, None, True]})
                 self.queue.put(id_num)
@@ -159,70 +159,82 @@ class MMcNK_Queue:
         fig, ax1 = plt.subplots(figsize=(10, 6))
         ax2 = ax1.twinx()
 
+        ax1.set_xlabel("Time (minutes)")
+        ax1.set_ylabel("Number of People")
+        ax1.set_ylim(0, self.N - self.c + 0.5)
+        ax1.yaxis.set_major_locator(MultipleLocator(base=1.0))
+        ax1.minorticks_off()
+
+        ax2.set_ylabel("Cumulative Number of People")
+        ax2.yaxis.set_label_position("right")
+        ax2.yaxis.tick_right()
+        ax2.grid(False)
+        ax2.minorticks_off()
+
         self.event_timepoints = [] 
         self.num_people_served_data = []
         self.queue_length_data = []
         self.server_length_data = []
 
+        # Initialize the plot lines
+        line_queue, = ax1.plot([], [], label='In the Queue')
+        line_server, = ax1.plot([], [], color='black', alpha=0.3, label='Being Served')
+        line_served, = ax2.plot([], [], color='green', linestyle=':', alpha=0.3, label='Total Served')
+        line_blocked, = ax2.plot([], [], color='red', linestyle='--', alpha=0.3, label='Total Blocked')
+
         def init():
-            pass
+            line_queue.set_data([], [])
+            line_server.set_data([], [])
+            line_served.set_data([], [])
+            line_blocked.set_data([], [])
+            return line_queue, line_server, line_served, line_blocked
 
         def update(frame):
-
-            # process up to next event
             self.env.step()
 
-            # prepare axes
-            ax1.cla()
-            ax1.set_xlabel("Time (minutes)")
-            ax1.set_ylabel("Number of People")
-            ax1.set_xlim(max(0, self.env.now - window_size), max(window_size, self.env.now))
-            ax1.yaxis.set_major_locator(MultipleLocator(base=1.0))
-
-            ax2.cla()
-            ax2.set_ylabel("Cumulative Number of People")
-            ax2.yaxis.set_label_position("right")
-            ax2.yaxis.tick_right()
-            ax2.grid(False)
-            ax2.minorticks_off()
-
-            # get current state and update history
             queue_length = len(self.queue.items)
             server_length = len(self.server.users)
-            self.queue_length_data.append((self.env.now, queue_length))  # Store (time, queue_length)
-            self.server_length_data.append((self.env.now, server_length))  # Store (time, server_length)
+            self.queue_length_data.append((self.env.now, queue_length))
+            self.server_length_data.append((self.env.now, server_length))
             self.num_people_served_data.append((self.env.now, self.num_people_served))
             self.num_people_blocked_data.append((self.env.now, self.num_people_blocked_data[-1][1]))
             self.event_timepoints.append(self.env.now)
 
             # add data points before step changes to make to the plot
             # look like rectangles rather than lines joining points
-            if frame != 0 and self.queue_length_data[-1][1] != self.queue_length_data[-2][1]:
-                self.queue_length_data.insert(-1, (self.env.now, self.queue_length_data[-2][1]))
-            if frame != 0 and self.server_length_data[-1][1] != self.server_length_data[-2][1]:
-                self.server_length_data.insert(-1, (self.env.now, self.server_length_data[-2][1]))
-            if frame != 0 and self.num_people_served_data[-1][1] != self.num_people_served_data[-2][1]:
-                self.num_people_served_data.insert(-1, (self.env.now, self.num_people_served_data[-2][1]))
-            if frame != 0 and self.num_people_blocked_data[-1][1] != self.num_people_blocked_data[-2][1]:
-                self.num_people_blocked_data.insert(-1, (self.env.now, self.num_people_blocked_data[-2][1]))
+            for attr in ['queue_length_data', 'server_length_data', 'num_people_served_data', 'num_people_blocked_data']:
+                if frame != 0 and getattr(self, attr)[-1][1] != getattr(self, attr)[-2][1]:
+                    getattr(self, attr).insert(-1, (self.env.now, getattr(self, attr)[-2][1]))
 
-            # plot
-            ax1.plot(*zip(*self.queue_length_data), label='In the Queue')
-            ax1.plot(*zip(*self.server_length_data), color='black', alpha=0.3, label='Being Served')
-            ax2.plot(*zip(*self.num_people_served_data), color='green', linestyle=':', alpha=0.3, label='Total Served')
-            ax2.plot(*zip(*self.num_people_blocked_data), color='red', linestyle='--', alpha=0.3, label='Total Blocked')
-            ax1.legend(loc='upper left')
-            ax2.legend(loc='upper center')
+            ax1.set_xlim(max(0, self.env.now - window_size), max(window_size, self.env.now))
+            ax2.set_ylim(0, max(self.num_people_served, self.num_people_blocked_data[-1][1]) + 1)
+
+            line_queue.set_data(*zip(*self.queue_length_data))
+            line_server.set_data(*zip(*self.server_length_data))
+            line_served.set_data(*zip(*self.num_people_served_data))
+            line_blocked.set_data(*zip(*self.num_people_blocked_data))
+            
+            ax1.relim()
+            ax1.autoscale_view()
+            ax2.relim()
+            ax2.autoscale_view()
+
+            return line_queue, line_server, line_served, line_blocked
 
         ani = FuncAnimation(fig, update, init_func=init, interval=30, blit=False)
+
+        # Manually create a single legend for both axes
+        lines = [line_queue, line_server, line_served, line_blocked]
+        labels = [line.get_label() for line in lines]
+        ax1.legend(lines, labels, loc='upper left')
+        ax2.legend(loc='upper center')
+
         plt.show()
 
 def main():
     # Simulation
     q = MMcNK_Queue(lambda_=5, mu=3, c=2, N=7)
-    q.env.process(q.generate_arrivals_forever())  # Start customer arrival process
-
-    # Animate queue length
+    q.env.process(q.generate_arrivals_forever())
     q.animate_queue_length(window_size=3)
     q.get_statistics()
 
