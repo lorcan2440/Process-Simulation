@@ -1,8 +1,9 @@
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
-import matplotlib.ticker as plticker
+from matplotlib.ticker import MultipleLocator
 
 import simpy
+
 import random
 import math
 import itertools
@@ -176,7 +177,7 @@ class MMcNK_Queue:
             ax1.set_xlabel("Time (minutes)")
             ax1.set_ylabel("Number of People")
             ax1.set_xlim(max(0, self.env.now - window_size), max(window_size, self.env.now))
-            ax1.yaxis.set_major_locator(plticker.MultipleLocator(base=1.0))
+            ax1.yaxis.set_major_locator(MultipleLocator(base=1.0))
 
             ax2.cla()
             ax2.set_ylabel("Cumulative Number of People")
