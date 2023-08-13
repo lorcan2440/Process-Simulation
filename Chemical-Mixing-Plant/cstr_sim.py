@@ -72,15 +72,6 @@ history = {
 vid_writer = anim.FFMpegWriter(fps=30, codec='libx264', bitrate=-1)
 
 
-## Sliders
-
-def init_graph():
-
-    mpl.rcParams['animation.ffmpeg_path'] = FFMPEG_PATH
-    plt.rcParams["figure.autolayout"] = True
-    plt.style.use(MPL_STYLESHEET)
-
-
 ###############
 #### MODEL ####
 ###############
@@ -119,18 +110,9 @@ def ode_system(t: float, y: np.ndarray,
 #### ANIMATION ####
 ###################
 
-def animate(frame: int, history: dict[str, np.ndarray]) -> None:
+def animate(frame: int, history: dict[str, np.ndarray], lines: tuple) -> None:
 
-    # clear axes and set graphical options
-    ax_c.cla()
-    ax_T.cla()
-    ax_c.set_title(r'Reaction: $ A + B \rightarrow C $')
-    ax_T.set_xlabel(r'time / s')
-    ax_c.set_ylabel(r'concentration / $ mol \ dm^{-3} $')
-    ax_T.set_ylabel(r'temperature / $ K $')
-    
-    ax_c.tick_params(axis='both', which='both', labelsize=7, labelbottom=True)
-    ax_T.tick_params(axis='both', which='both', labelsize=7)
+    line_cA, line_cB, line_cC, line_T = lines
 
     # the new values of t to be plotted in this frame
     t_range = np.array([INITIAL_T + MAX_STEP_T * frame * WINDOW, \
@@ -149,35 +131,32 @@ def animate(frame: int, history: dict[str, np.ndarray]) -> None:
     all_y_vec = np.concatenate((all_y_vec, sol.y), axis=1)
 
     # chop down lists and set new axis limits
-    if SLIDING_WINDOW_T is not None:
-        new_cutoff = all_t[-1] - SLIDING_WINDOW_T
-        all_t = all_t[all_t >= new_cutoff]
-        all_y_vec = all_y_vec[:, -1 * len(all_t):]
+    new_cutoff = all_t[-1] - SLIDING_WINDOW_T
+    all_t = all_t[all_t >= new_cutoff]
+    all_y_vec = all_y_vec[:, -1 * len(all_t):]
 
-        # set x axis range
-        _, t_max = ax_T.get_xlim()
-        if all_t[-1] < INITIAL_T + SLIDING_WINDOW_T:
-            ax_c.set_xlim(INITIAL_T, INITIAL_T + SLIDING_WINDOW_T)
-            ax_T.set_xlim(INITIAL_T, INITIAL_T + SLIDING_WINDOW_T)
-        elif all_t[-1] >= t_max:
-            ax_c.set_xlim(all_t[-1] - SLIDING_WINDOW_T, all_t[-1])
-            ax_T.set_xlim(all_t[-1] - SLIDING_WINDOW_T, all_t[-1])
-        
-        # set y axis range (fix T)
-        ax_T.set_ylim(AXIS_TEMP_MIN, AXIS_TEMP_MIN + AXIS_TEMP_RANGE)
-
+    # set x axis range
+    _, t_max = ax_T.get_xlim()
+    if all_t[-1] < INITIAL_T + SLIDING_WINDOW_T:
+        ax_c.set_xlim(INITIAL_T, INITIAL_T + SLIDING_WINDOW_T)
+        ax_T.set_xlim(INITIAL_T, INITIAL_T + SLIDING_WINDOW_T)
+    elif all_t[-1] >= t_max:
+        ax_c.set_xlim(all_t[-1] - SLIDING_WINDOW_T, all_t[-1])
+        ax_T.set_xlim(all_t[-1] - SLIDING_WINDOW_T, all_t[-1])
+    
+    # set y axis range (fix T)
+    ax_c.relim()
+    ax_c.autoscale_view()
+    ax_T.set_ylim(AXIS_TEMP_MIN, AXIS_TEMP_MIN + AXIS_TEMP_RANGE)
 
     # update the record of the previous values, passed into the next animation frame
     history.update({'last_vals': last_vals, 'all_t': all_t, 'all_y_vec': all_y_vec})
 
-    # plot lines up to the latest point
-    for i, y_vec in enumerate(all_y_vec):
-        if 0 <= i <= 2:  # concentration
-            ax_c.plot(all_t, y_vec, label=DEP_VAR_NAMES[i])
-            ax_c.legend(loc='lower left')
-        elif i == 3:     # temperature
-            ax_T.plot(all_t, y_vec, label=DEP_VAR_NAMES[i])
-            ax_T.legend(loc='lower left')
+    # update the lines
+    line_cA.set_data(all_t, all_y_vec[0])
+    line_cB.set_data(all_t, all_y_vec[1])
+    line_cC.set_data(all_t, all_y_vec[2])
+    line_T.set_data(all_t, all_y_vec[3])
 
 
 if __name__ == '__main__':
@@ -188,6 +167,32 @@ if __name__ == '__main__':
     ax_T = plt.subplot(2, 2, 3)
     ax_img = plt.subplot(1, 2, 2)
     plt.subplots_adjust(bottom=0.20)
+
+    line_cA, = ax_c.plot([], [], label=DEP_VAR_NAMES[0])
+    line_cB, = ax_c.plot([], [], label=DEP_VAR_NAMES[1])
+    line_cC, = ax_c.plot([], [], label=DEP_VAR_NAMES[2])
+    line_T, = ax_T.plot([], [], label=DEP_VAR_NAMES[3])
+    lines = (line_cA, line_cB, line_cC, line_T)
+
+    def init_graph():
+
+        mpl.rcParams['animation.ffmpeg_path'] = FFMPEG_PATH
+        plt.rcParams["figure.autolayout"] = True
+        plt.style.use(MPL_STYLESHEET)
+
+        ax_c.set_title(r'Reaction: $ A + B \rightarrow C $')
+        ax_T.set_xlabel(r'time / s')
+        ax_c.set_ylabel(r'concentration / $ mol \ dm^{-3} $')
+        ax_T.set_ylabel(r'temperature / $ K $')
+
+        ax_c.tick_params(axis='both', which='both', labelsize=7, labelbottom=True)
+        ax_T.tick_params(axis='both', which='both', labelsize=7)
+
+        line_cA.set_data([], [])
+        line_cB.set_data([], [])
+        line_cC.set_data([], [])
+        line_T.set_data([], [])
+        return line_cA, line_cB, line_cC, line_T
 
     # set up sliders
     ax_slider_c_A = plt.axes([0.125, 0.1, 0.5, 0.02], facecolor="lightgrey")
@@ -204,10 +209,9 @@ if __name__ == '__main__':
     ax_img.set_axis_off()
 
     # render animation
-    ani = anim.FuncAnimation(fig, animate, fargs=(history,), init_func=init_graph, \
+    ani = anim.FuncAnimation(fig, animate, fargs=(history, lines), init_func=init_graph, \
                              interval=30, save_count=100)
     plt.show()
 
-    print('Making video...')
-    ani.save('Chemical-Mixing-Plant/Simulation.mp4', writer=vid_writer)
-    print('Finished!')
+    #ani.save('Chemical-Mixing-Plant/Simulation.mp4', writer=vid_writer)
+    print('Finished')
