@@ -213,7 +213,7 @@ class MMcNK_Queue:
             line_server.set_data(*zip(*self.server_length_data))
             line_served.set_data(*zip(*self.num_people_served_data))
             line_blocked.set_data(*zip(*self.num_people_blocked_data))
-            
+
             ax1.relim()
             ax1.autoscale_view()
             ax2.relim()

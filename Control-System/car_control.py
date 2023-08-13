@@ -67,12 +67,6 @@ class Car:
         stream_handler.setFormatter(ColouredLoggingFormatter())
         self.logger.addHandler(file_handler)  # send logs to file
         self.logger.addHandler(stream_handler)  # send logs to console
-    
-    @staticmethod
-    def init_graph():
-        plt.style.use(MPL_STYLESHEET)
-        mpl.rcParams['animation.ffmpeg_path'] = FFMPEG_PATH
-    
 
     def pid_controller(self, Kp: float = 0, Ki: float = 0, Kd: float = 0,
                        Ti: float = None, Td: float = None) -> float:
@@ -139,9 +133,25 @@ class Car:
         - `float`: a single random number from the normal distribution
         '''
         return np.random.normal(mean, std_dev)
-
     
-    def animate(self, frame: int, slider: Slider, ax: plt.Axes):
+    def iterate_system(self, slider: Slider):
+        # new iteration: calculate system dynamics
+        self.t.append(self.t[-1] + self.DATA_PERIOD)
+        self.v_true.append(self.v_true[-1] + self.a[-1] * self.DATA_PERIOD)
+        # add measurement noise (output disturbance) to velocity reading
+        self.v_meas.append(self.v_true[-1] + self.gaussian_noise(std_dev=self.MEASURE_NOISE_STD_DEV))
+        # estmate the velocity using a Kalman filter
+        self.v_est.append(self.kalman_filter(self.v_meas[-1]))
+        # read the setpoint velocity from the slider
+        self.v_sp.append(slider.val)
+        # calculate the error
+        self.e.append(self.v_sp[-1] - self.v_est[-1])
+        # compute the control signal
+        u = self.pid_controller(Kp=1.5, Ki=0.1, Kd=0.1)
+        # add process noise (input disturbance) to the acceleration
+        self.a.append(u + self.gaussian_noise(std_dev=self.PROCESS_NOISE_STD_DEV))
+
+    def animate(self, frame: int, slider: Slider, ax: plt.Axes, lines: tuple, log: bool = True):
         '''
         Display the next frame, making all calculations required.
         
@@ -153,37 +163,14 @@ class Car:
         #### Optional
         '''
 
-        ax.cla()  # clear the axes
-        plt.sca(ax)  # set the current axes to the main axes
-        plt.xlabel('Time / $ s $')
-        plt.ylabel('Velocity / $ ms^{-1} $')
-
-        # new iteration: calculate system dynamics
-        self.t.append(self.t[-1] + self.DATA_PERIOD)
-        self.v_true.append(self.v_true[-1] + self.a[-1] * self.DATA_PERIOD)
-
-        # add measurement noise (output disturbance) to velocity reading
-        self.v_meas.append(self.v_true[-1] + self.gaussian_noise(std_dev=self.MEASURE_NOISE_STD_DEV))
-
-        # estmate the velocity using a Kalman filter
-        self.v_est.append(self.kalman_filter(self.v_meas[-1]))
-
-        # read the setpoint velocity from the slider
-        self.v_sp.append(slider.val)
-
-        # calculate the error
-        self.e.append(self.v_sp[-1] - self.v_est[-1])
-        
-        # compute the control signal
-        u = self.pid_controller(Kp=1.5, Ki=0.1, Kd=0.1)
-
-        # add process noise (input disturbance) to the acceleration
-        self.a.append(u + self.gaussian_noise(std_dev=self.PROCESS_NOISE_STD_DEV))
+        # make all calculations
+        self.iterate_system(slider)
 
         # log the current state
-        self.logger.info(f'Frame = {frame}, t = {self.t[-1]}, '
-                         f'v_true = {self.v_true[-1]}, v_meas = {self.v_meas[-1]}, '
-                         f'v_est = {self.v_est[-1]}, v_sp = {self.v_sp[-1]}')
+        if log:
+            self.logger.info(f'Frame = {frame}, t = {self.t[-1]}, '
+                            f'v_true = {self.v_true[-1]}, v_meas = {self.v_meas[-1]}, '
+                            f'v_est = {self.v_est[-1]}, v_sp = {self.v_sp[-1]}')
 
         # calculate arrays to be shown in the plot
         t_range = self.t[-1 - self.num_points_per_frame:]  #  upto and including the current time
@@ -193,12 +180,14 @@ class Car:
         v_est_range = self.v_est[-1 - self.num_points_per_frame:]
 
         # trim axes, plot data
-        plt.xlim(max(0, self.t[-1] - self.WINDOW_PERIOD), max(self.WINDOW_PERIOD, self.t[-1]))
-        plt.ylim(-20, 60)
-        ax.plot(t_range, v_sp_range, color='gray', linestyle='-', alpha=0.3, label='$v_{sp}$')
-        ax.plot(t_range, v_true_range, color='red', alpha=0.3, label='$v_{true}$')
-        ax.plot(t_range, v_meas_range, color='red', marker='x', linestyle='', label='$v_{meas}$')
-        ax.plot(t_range, v_est_range, color='black', label='$v_{est}$')
+        ax.set_xlim(max(0, self.t[-1] - self.WINDOW_PERIOD), max(self.WINDOW_PERIOD, self.t[-1]))
+        ax.set_ylim(-20, 60)
+
+        line_sp, line_true, line_meas, line_est = lines
+        line_sp.set_data(t_range, v_sp_range)
+        line_true.set_data(t_range, v_true_range)
+        line_meas.set_data(t_range, v_meas_range)
+        line_est.set_data(t_range, v_est_range)
 
         ax.legend(loc='upper left')
     
@@ -207,9 +196,29 @@ class Car:
         fig, axs = plt.subplots(2, 1, figsize=(10, 6),
             gridspec_kw={'height_ratios': [8, 1], 'hspace': 0.3})
         ax_main, ax_slider = axs
+
+        ax_main.set_xlabel('Time / $ s $')
+        ax_main.set_ylabel('Velocity / $ ms^{-1} $')
+
+        line_sp, = ax_main.plot([], [], color='gray', linestyle='-', alpha=0.3, label='$v_{sp}$')
+        line_true, = ax_main.plot([], [], color='red', alpha=0.3, label='$v_{true}$')
+        line_meas, = ax_main.plot([], [], color='red', marker='x', linestyle='', label='$v_{meas}$')
+        line_est, = ax_main.plot([], [], color='black', label='$v_{est}$')
+        lines = (line_sp, line_true, line_meas, line_est)
+
+        def init_graph():
+            plt.style.use(MPL_STYLESHEET)
+            mpl.rcParams['animation.ffmpeg_path'] = FFMPEG_PATH
+
+            line_sp.set_data([], [])
+            line_true.set_data([], [])
+            line_meas.set_data([], [])
+            line_est.set_data([], [])
+            return line_sp, line_true, line_meas, line_est
+        
         slider = Slider(ax_slider, '$v_{sp}$', valmin=-10, valmax=50, valinit=self.v_sp[0])
-        ani = anim.FuncAnimation(fig, self.animate, fargs=(slider, ax_main), init_func=self.init_graph, \
-            interval=self.DATA_PERIOD * 1000, save_count=sys.maxsize)
+        ani = anim.FuncAnimation(fig, self.animate, fargs=(slider, ax_main, lines, False),
+            init_func=init_graph, interval=self.DATA_PERIOD * 1000, save_count=sys.maxsize)
         
         if save_or_view == 'save':
             ani.save('MyVideo.mp4', writer=anim.FFMpegWriter(fps=30, codec='libx264', bitrate=-1))
