@@ -5,7 +5,6 @@ import matplotlib as mpl
 import numpy as np
 
 from filterpy.kalman import KalmanFilter
-from control.optimal import create_mpc_iosystem
 
 import sys
 import logging
@@ -146,8 +145,10 @@ class Car:
         self.v_sp.append(slider.val)
         # calculate the error
         self.e.append(self.v_sp[-1] - self.v_est[-1])
+
         # compute the control signal
         u = self.pid_controller(Kp=1.5, Ki=0.1, Kd=0.1)
+        
         # add process noise (input disturbance) to the acceleration
         self.a.append(u + self.gaussian_noise(std_dev=self.PROCESS_NOISE_STD_DEV))
 

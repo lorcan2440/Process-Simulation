@@ -7,9 +7,13 @@ import simpy
 import random
 import math
 import itertools
+import logging
 
 
 class MMcNK_Queue:
+
+    _LOG_FILE = 'queue_log.txt'
+
     def __init__(self, lambda_: float = 1, mu: float = 1, c: int = 1,
                  N: int = float('inf'), K: int = float('inf'), env: simpy.Environment = None):     
         '''
@@ -42,6 +46,48 @@ class MMcNK_Queue:
         self.num_people_served = 0  # people who entered the queue, went to a server, and left
         self.num_people_blocked_data = [(0, 0)]  # people who tried to enter but found a full queue, so did not get served never got served
         self.results = {}
+        self.init_logger()
+
+    def init_logger(self):
+        self.logger = logging.getLogger(__name__)
+        self.logger.setLevel(logging.DEBUG)
+        file_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+        file_handler = logging.FileHandler(self._LOG_FILE)
+        file_handler.setFormatter(file_formatter)
+        self.logger.addHandler(file_handler)  # send logs to file
+
+    def generate_arrivals_forever(self, end_condition_customers: int = float('inf')):
+
+        id_num = 0
+        while True:
+            # wait for the next customer
+            inter_arrival_time = random.expovariate(self.lamda)
+            yield self.env.timeout(inter_arrival_time)  # wait a random entry time
+
+            # check there are some customers in the population - if not, cycle
+            is_people_in_population = (self.K - len(self.queue.items) + len(self.server.users) > 0)
+            if not is_people_in_population:
+                continue
+
+            # a wild customer appears! Can they fit in the queue?
+            if len(self.queue.items) < self.queue.capacity:
+                # admit to queue and enter process for them
+                self.logger.info(f'Customer {id_num} admitted into queue at {self.env.now}')
+                self.results.update({id_num: [self.env.now, None, None, True]})
+                self.queue.put(id_num)
+                self.env.process(self.process_customer(id_num))
+            else:
+                # record their attempted entry but do not enter the queue
+                self.logger.info(f'Customer {id_num} blocked from queue at {self.env.now}')
+                self.num_people_blocked_data.append((self.env.now, self.num_people_blocked_data[-1][1] + 1))
+                self.results.update({id_num: [self.env.now, None, None, False]})
+
+            # end simulation if end condition met
+            if id_num >= end_condition_customers:
+                self.logger.info(f'Ending simulation at {self.env.now} as '
+                                 f'{id_num} customers have been served.')
+                break
+            id_num += 1
 
     def run_until_time(self, runtime: float):
         '''
@@ -63,43 +109,16 @@ class MMcNK_Queue:
         self.env.run(until=runtime)
         return self.results
 
-    def generate_arrivals_forever(self, end_condition_customers: int = float('inf')):
-
-        id_num = 0
-        while True:
-            # wait for the next customer
-            inter_arrival_time = random.expovariate(self.lamda)
-            yield self.env.timeout(inter_arrival_time)  # wait a random entry time
-
-            # check there are some customers in the population - if not, cycle
-            is_people_in_population = (self.K - len(self.queue.items) + len(self.server.users) > 0)
-            if not is_people_in_population:
-                continue
-
-            # a wild customer appears! Can they fit in the queue?
-            if len(self.queue.items) < self.queue.capacity:
-                # admit to queue and enter process for them
-                self.results.update({id_num: [self.env.now, None, None, True]})
-                self.queue.put(id_num)
-                self.env.process(self.process_customer(id_num))
-            else:
-                # record their attempted entry but do not enter the queue
-                self.num_people_blocked_data.append((self.env.now, self.num_people_blocked_data[-1][1] + 1))
-                self.results.update({id_num: [self.env.now, None, None, False]})
-
-            # end simulation if end condition met
-            if id_num >= end_condition_customers:
-                break
-            id_num += 1
-
     def process_customer(self, id_num):
         # serve a customer at the front of the queue
         with self.server.request() as request:
             yield request
             _id_moved = self.queue.get()  # remove this customer from the queue
+            self.logger.info(f'Customer {id_num} began being served at {self.env.now}')
             self.results[id_num][1] = self.env.now  # time moved to the counter
             service_time = random.expovariate(self.mu)
             yield self.env.timeout(service_time)
+            self.logger.info(f'Customer {id_num} finished at {self.env.now}')
             self.results[id_num][2] = self.env.now  # time left the system
             self.num_people_served += 1
 
@@ -190,7 +209,10 @@ class MMcNK_Queue:
             return line_queue, line_server, line_served, line_blocked
 
         def update(frame):
-            self.env.step()
+            if self.env.peek() is not simpy.core.Infinity:
+                self.env.step()
+            else:
+                return
 
             queue_length = len(self.queue.items)
             server_length = len(self.server.users)
@@ -234,8 +256,14 @@ class MMcNK_Queue:
 def main():
     # Simulation
     q = MMcNK_Queue(lambda_=5, mu=3, c=2, N=7)
-    q.env.process(q.generate_arrivals_forever())
-    q.animate_queue_length(window_size=3)
+
+    # animate forever
+    q.env.process(q.generate_arrivals_forever(end_condition_customers=10))  # process the generator
+    q.animate_queue_length(window_size=3)  # animate at each yield from the generator
+
+    # simulate a set time
+    results = q.run_until_time(30)
+
     q.get_statistics()
 
 if __name__ == '__main__':
