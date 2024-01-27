@@ -9,13 +9,15 @@ import math
 import itertools
 import logging
 
+plt.style.use(r'C:\LibsAndApps\Python config files\proplot_style.mplstyle')
+
 
 class MMcNK_Queue:
 
     _LOG_FILE = 'queue_log.txt'
 
     def __init__(self, lambda_: float = 1, mu: float = 1, c: int = 1,
-                 N: int = float('inf'), K: int = float('inf'), env: simpy.Environment = None):     
+                 N: int = float('inf'), K: int = float('inf'), env: simpy.Environment = None):
         '''
         Define an M/M/c/N/K queue, a continuous-time Markov chain (CTMC) and stochastic process
         in which 'customers' from a 'population' arrive and are served acoording to a Poisson point process,
@@ -56,7 +58,18 @@ class MMcNK_Queue:
         file_handler.setFormatter(file_formatter)
         self.logger.addHandler(file_handler)  # send logs to file
 
-    def generate_arrivals_forever(self, end_condition_customers: int = float('inf')):
+    def generate_arrivals_forever(self, end_condition_customers: int = float('inf')) -> simpy.events.Timeout:
+        '''
+        _summary_
+        
+        ### Optional Arguments
+
+        - `end_condition_customers` (int, default = float('inf')): optionally stop the simulation after a
+        given number of customers are served.
+        
+        ### Yields
+        - `Iterator[simpy.events.Timeout]`: waits the inter-arrival time between customers.
+        '''        
 
         id_num = 0
         while True:
@@ -84,8 +97,7 @@ class MMcNK_Queue:
 
             # end simulation if end condition met
             if id_num >= end_condition_customers:
-                self.logger.info(f'Ending simulation at {self.env.now} as '
-                                 f'{id_num} customers have been served.')
+                self.logger.info(f'Customer {id_num} is the last customer allowed in.')
                 break
             id_num += 1
 
@@ -163,8 +175,6 @@ class MMcNK_Queue:
                 + (self.c * rho) ** self.c / math.factorial(self.c) * sum([
                     rho ** (n - self.c) for n in range(self.c + 1, self.N + 1)
                 ])) ** -1
-        pi_n = lambda n: pi_0 * (self.c * rho) ** n / math.factorial(n) if 0 <= n < self.c \
-            else pi_0 * (self.c * rho) ** n * self.c ** (self.c - n) / math.factorial(self.c)
         pi_N = pi_0 * (self.c * rho) ** self.N / (math.factorial(self.c) * self.c ** (self.N - self.c))
         E_queue_length = pi_0 * (self.c * rho) ** self.c * rho / (math.factorial(self.c) * (1 - rho) ** 2) * (
             1 - rho ** (self.N - self.c) - (self.N - self.c) * (1 - rho) * rho ** (self.N - self.c)
@@ -249,20 +259,19 @@ class MMcNK_Queue:
         lines = [line_queue, line_server, line_served, line_blocked]
         labels = [line.get_label() for line in lines]
         ax1.legend(lines, labels, loc='upper left')
-        ax2.legend(loc='upper center')
 
         plt.show()
 
 def main():
     # Simulation
-    q = MMcNK_Queue(lambda_=5, mu=3, c=2, N=7)
+    q = MMcNK_Queue(lambda_=5, mu=3, c=2, N=10)
 
     # animate forever
-    q.env.process(q.generate_arrivals_forever(end_condition_customers=10))  # process the generator
+    q.env.process(q.generate_arrivals_forever())  # process the generator
     q.animate_queue_length(window_size=3)  # animate at each yield from the generator
 
     # simulate a set time
-    results = q.run_until_time(30)
+    #results = q.run_until_time(30)
 
     q.get_statistics()
 

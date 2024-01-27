@@ -174,6 +174,9 @@ if __name__ == '__main__':
     line_T, = ax_T.plot([], [], label=DEP_VAR_NAMES[3])
     lines = (line_cA, line_cB, line_cC, line_T)
 
+    ax_c.legend(loc='upper left')
+    ax_T.legend(loc='upper left')
+
     def init_graph():
 
         mpl.rcParams['animation.ffmpeg_path'] = FFMPEG_PATH
