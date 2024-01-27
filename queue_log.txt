@@ -1,0 +1,588 @@
+2024-01-27 00:17:39,801 - INFO - Customer 0 admitted into queue at 0.11918322641250043
+2024-01-27 00:17:39,900 - INFO - Customer 0 began being served at 0.11918322641250043
+2024-01-27 00:17:39,970 - INFO - Customer 0 finished at 0.20255758384257658
+2024-01-27 00:17:40,074 - INFO - Customer 1 admitted into queue at 0.4335380030839906
+2024-01-27 00:17:40,176 - INFO - Customer 1 began being served at 0.4335380030839906
+2024-01-27 00:17:40,244 - INFO - Customer 2 admitted into queue at 0.9714305213519498
+2024-01-27 00:17:40,345 - INFO - Customer 2 began being served at 0.9714305213519498
+2024-01-27 00:17:40,412 - INFO - Customer 1 finished at 1.0703116767884127
+2024-01-27 00:17:40,514 - INFO - Customer 2 finished at 1.4468197090682948
+2024-01-27 00:17:40,615 - INFO - Customer 3 admitted into queue at 1.473843050115486
+2024-01-27 00:17:40,720 - INFO - Customer 3 began being served at 1.473843050115486
+2024-01-27 00:17:40,790 - INFO - Customer 3 finished at 1.582238161098324
+2024-01-27 00:17:40,888 - INFO - Customer 4 admitted into queue at 2.0715270391891116
+2024-01-27 00:17:40,986 - INFO - Customer 4 began being served at 2.0715270391891116
+2024-01-27 00:17:41,049 - INFO - Customer 5 admitted into queue at 2.1246733571646224
+2024-01-27 00:17:41,144 - INFO - Customer 5 began being served at 2.1246733571646224
+2024-01-27 00:17:41,206 - INFO - Customer 6 admitted into queue at 2.180257160944749
+2024-01-27 00:17:41,301 - INFO - Customer 7 admitted into queue at 2.209043254484428
+2024-01-27 00:17:41,395 - INFO - Customer 8 admitted into queue at 2.2408003240575645
+2024-01-27 00:17:41,488 - INFO - Customer 9 admitted into queue at 2.3789586221545633
+2024-01-27 00:17:41,583 - INFO - Customer 10 admitted into queue at 2.5492180955107004
+2024-01-27 00:17:41,679 - INFO - Customer 5 finished at 2.7120757502646615
+2024-01-27 00:17:41,798 - INFO - Customer 6 began being served at 2.7120757502646615
+2024-01-27 00:17:41,862 - INFO - Customer 6 finished at 2.7819219608687464
+2024-01-27 00:17:41,960 - INFO - Customer 7 began being served at 2.7819219608687464
+2024-01-27 00:17:42,028 - INFO - Customer 11 admitted into queue at 2.810963310410028
+2024-01-27 00:17:42,130 - INFO - Customer 12 admitted into queue at 2.8217051836499905
+2024-01-27 00:17:42,233 - INFO - Customer 13 admitted into queue at 2.8318079046689864
+2024-01-27 00:17:42,333 - INFO - Customer 14 admitted into queue at 3.0258215300418003
+2024-01-27 00:17:42,445 - INFO - Customer 15 admitted into queue at 3.3517994870656533
+2024-01-27 00:17:42,543 - INFO - Customer 4 finished at 3.377590843273328
+2024-01-27 00:17:42,643 - INFO - Customer 8 began being served at 3.377590843273328
+2024-01-27 00:17:42,708 - INFO - Customer 8 finished at 3.485697949503272
+2024-01-27 00:17:42,809 - INFO - Customer 9 began being served at 3.485697949503272
+2024-01-27 00:17:42,878 - INFO - Customer 9 finished at 3.512686218015779
+2024-01-27 00:17:42,974 - INFO - Customer 10 began being served at 3.512686218015779
+2024-01-27 00:17:43,035 - INFO - Customer 7 finished at 3.543544742678508
+2024-01-27 00:17:43,128 - INFO - Customer 11 began being served at 3.543544742678508
+2024-01-27 00:17:43,189 - INFO - Customer 16 admitted into queue at 3.6944087266055963
+2024-01-27 00:17:43,283 - INFO - Customer 11 finished at 3.8150988062428426
+2024-01-27 00:17:43,376 - INFO - Customer 12 began being served at 3.8150988062428426
+2024-01-27 00:17:43,439 - INFO - Customer 12 finished at 4.068544696626366
+2024-01-27 00:17:43,534 - INFO - Customer 13 began being served at 4.068544696626366
+2024-01-27 00:17:43,597 - INFO - Customer 17 admitted into queue at 4.089147258910642
+2024-01-27 00:17:43,718 - INFO - Customer 10 finished at 4.097972717069636
+2024-01-27 00:17:43,815 - INFO - Customer 14 began being served at 4.097972717069636
+2024-01-27 00:17:43,879 - INFO - Customer 13 finished at 4.116966699592559
+2024-01-27 00:17:43,977 - INFO - Customer 15 began being served at 4.116966699592559
+2024-01-27 00:17:44,045 - INFO - Customer 18 admitted into queue at 4.393198792807624
+2024-01-27 00:17:44,142 - INFO - Customer 15 finished at 4.485675757554594
+2024-01-27 00:17:44,240 - INFO - Customer 16 began being served at 4.485675757554594
+2024-01-27 00:17:44,307 - INFO - Customer 16 finished at 4.5631807896281416
+2024-01-27 00:17:44,409 - INFO - Customer 17 began being served at 4.5631807896281416
+2024-01-27 00:17:44,475 - INFO - Customer 19 admitted into queue at 4.630377715133628
+2024-01-27 00:17:44,576 - INFO - Customer 14 finished at 4.669710658661189
+2024-01-27 00:17:44,678 - INFO - Customer 18 began being served at 4.669710658661189
+2024-01-27 00:17:44,745 - INFO - Customer 17 finished at 4.740762497311951
+2024-01-27 00:17:44,845 - INFO - Customer 19 began being served at 4.740762497311951
+2024-01-27 00:17:44,911 - INFO - Customer 19 finished at 4.745130998710981
+2024-01-27 00:17:45,012 - INFO - Customer 18 finished at 4.862681051865062
+2024-01-27 00:17:45,114 - INFO - Customer 20 admitted into queue at 4.879747646624611
+2024-01-27 00:17:45,214 - INFO - Customer 20 began being served at 4.879747646624611
+2024-01-27 00:17:45,282 - INFO - Customer 21 admitted into queue at 5.206561609286311
+2024-01-27 00:17:45,381 - INFO - Customer 21 began being served at 5.206561609286311
+2024-01-27 00:17:45,448 - INFO - Customer 20 finished at 5.207793979149484
+2024-01-27 00:17:45,551 - INFO - Customer 22 admitted into queue at 5.4954171955020295
+2024-01-27 00:17:45,653 - INFO - Customer 22 began being served at 5.4954171955020295
+2024-01-27 00:17:45,722 - INFO - Customer 22 finished at 5.502804509351247
+2024-01-27 00:17:45,819 - INFO - Customer 23 admitted into queue at 5.5246542447148075
+2024-01-27 00:17:45,960 - INFO - Customer 23 began being served at 5.5246542447148075
+2024-01-27 00:17:46,027 - INFO - Customer 24 admitted into queue at 5.598054964051012
+2024-01-27 00:17:46,119 - INFO - Customer 25 admitted into queue at 5.6610413057370295
+2024-01-27 00:17:46,214 - INFO - Customer 23 finished at 5.698226747436517
+2024-01-27 00:17:46,306 - INFO - Customer 24 began being served at 5.698226747436517
+2024-01-27 00:17:46,370 - INFO - Customer 26 admitted into queue at 5.813836976278836
+2024-01-27 00:17:46,463 - INFO - Customer 27 admitted into queue at 5.880041237734638
+2024-01-27 00:17:46,558 - INFO - Customer 21 finished at 5.933840961091327
+2024-01-27 00:17:46,657 - INFO - Customer 25 began being served at 5.933840961091327
+2024-01-27 00:17:46,720 - INFO - Customer 24 finished at 5.953954582812935
+2024-01-27 00:17:46,814 - INFO - Customer 26 began being served at 5.953954582812935
+2024-01-27 00:17:46,875 - INFO - Customer 26 finished at 5.994817208825916
+2024-01-27 00:17:46,971 - INFO - Customer 27 began being served at 5.994817208825916
+2024-01-27 00:17:47,033 - INFO - Customer 27 finished at 6.002009133469285
+2024-01-27 00:17:47,126 - INFO - Customer 25 finished at 6.324739284996753
+2024-01-27 00:17:47,220 - INFO - Customer 28 admitted into queue at 6.416038163127964
+2024-01-27 00:17:47,314 - INFO - Customer 28 began being served at 6.416038163127964
+2024-01-27 00:17:47,376 - INFO - Customer 29 admitted into queue at 6.749002139693543
+2024-01-27 00:17:47,471 - INFO - Customer 29 began being served at 6.749002139693543
+2024-01-27 00:17:47,535 - INFO - Customer 29 finished at 6.83069901803551
+2024-01-27 00:17:47,630 - INFO - Customer 28 finished at 6.844325548316403
+2024-01-27 00:17:47,747 - INFO - Customer 30 admitted into queue at 7.001895786118875
+2024-01-27 00:17:47,842 - INFO - Customer 30 began being served at 7.001895786118875
+2024-01-27 00:17:47,905 - INFO - Customer 31 admitted into queue at 7.206858968161316
+2024-01-27 00:17:48,001 - INFO - Customer 31 began being served at 7.206858968161316
+2024-01-27 00:17:48,065 - INFO - Customer 30 finished at 7.975609181122566
+2024-01-27 00:17:48,161 - INFO - Customer 32 admitted into queue at 8.186671286157274
+2024-01-27 00:17:48,275 - INFO - Customer 32 began being served at 8.186671286157274
+2024-01-27 00:17:48,339 - INFO - Customer 33 admitted into queue at 8.276959217246684
+2024-01-27 00:17:48,441 - INFO - Customer 34 admitted into queue at 8.339305790938724
+2024-01-27 00:17:48,555 - INFO - Customer 31 finished at 8.387324504192703
+2024-01-27 00:17:48,653 - INFO - Customer 33 began being served at 8.387324504192703
+2024-01-27 00:17:48,720 - INFO - Customer 35 admitted into queue at 8.466999676899011
+2024-01-27 00:17:48,821 - INFO - Customer 36 admitted into queue at 8.583747419405162
+2024-01-27 00:17:48,918 - INFO - Customer 37 admitted into queue at 8.65342042142373
+2024-01-27 00:17:49,014 - INFO - Customer 38 admitted into queue at 8.769643600492822
+2024-01-27 00:17:49,110 - INFO - Customer 39 admitted into queue at 8.80124099221483
+2024-01-27 00:17:49,205 - INFO - Customer 33 finished at 8.801393638897487
+2024-01-27 00:17:49,300 - INFO - Customer 34 began being served at 8.801393638897487
+2024-01-27 00:17:49,365 - INFO - Customer 32 finished at 8.86476924398099
+2024-01-27 00:17:49,466 - INFO - Customer 35 began being served at 8.86476924398099
+2024-01-27 00:17:49,533 - INFO - Customer 40 admitted into queue at 8.922144662239896
+2024-01-27 00:17:49,631 - INFO - Customer 41 admitted into queue at 8.937757774634925
+2024-01-27 00:17:49,749 - INFO - Customer 42 admitted into queue at 8.970188042511795
+2024-01-27 00:17:49,846 - INFO - Customer 34 finished at 9.149857823298488
+2024-01-27 00:17:49,944 - INFO - Customer 36 began being served at 9.149857823298488
+2024-01-27 00:17:50,011 - INFO - Customer 43 admitted into queue at 9.168071999002528
+2024-01-27 00:17:50,112 - INFO - Customer 44 admitted into queue at 9.220295263758135
+2024-01-27 00:17:50,207 - INFO - Customer 35 finished at 9.227745834395932
+2024-01-27 00:17:50,305 - INFO - Customer 37 began being served at 9.227745834395932
+2024-01-27 00:17:50,372 - INFO - Customer 37 finished at 9.257896045989858
+2024-01-27 00:17:50,472 - INFO - Customer 38 began being served at 9.257896045989858
+2024-01-27 00:17:50,536 - INFO - Customer 38 finished at 9.288472945868463
+2024-01-27 00:17:50,634 - INFO - Customer 39 began being served at 9.288472945868463
+2024-01-27 00:17:50,702 - INFO - Customer 36 finished at 9.533218055597242
+2024-01-27 00:17:50,802 - INFO - Customer 40 began being served at 9.533218055597242
+2024-01-27 00:17:50,869 - INFO - Customer 45 admitted into queue at 9.685344607614304
+2024-01-27 00:17:50,971 - INFO - Customer 46 admitted into queue at 9.859851672419754
+2024-01-27 00:17:51,070 - INFO - Customer 47 admitted into queue at 9.862491189472658
+2024-01-27 00:17:51,173 - INFO - Customer 48 admitted into queue at 9.937987409617207
+2024-01-27 00:17:51,272 - INFO - Customer 49 blocked from queue at 10.000762487379795
+2024-01-27 00:17:51,306 - INFO - Customer 39 finished at 10.110204957718148
+2024-01-27 00:17:51,409 - INFO - Customer 41 began being served at 10.110204957718148
+2024-01-27 00:17:51,476 - INFO - Customer 50 admitted into queue at 10.160088292182223
+2024-01-27 00:17:51,578 - INFO - Customer 41 finished at 10.186777155271212
+2024-01-27 00:17:51,682 - INFO - Customer 42 began being served at 10.186777155271212
+2024-01-27 00:17:51,751 - INFO - Customer 51 admitted into queue at 10.243410848546967
+2024-01-27 00:17:51,851 - INFO - Customer 42 finished at 10.28224300995915
+2024-01-27 00:17:51,953 - INFO - Customer 43 began being served at 10.28224300995915
+2024-01-27 00:17:52,021 - INFO - Customer 52 admitted into queue at 10.659042240519051
+2024-01-27 00:17:52,123 - INFO - Customer 43 finished at 10.730062604850348
+2024-01-27 00:17:52,221 - INFO - Customer 44 began being served at 10.730062604850348
+2024-01-27 00:17:52,288 - INFO - Customer 53 admitted into queue at 10.78501123975526
+2024-01-27 00:17:52,390 - INFO - Customer 54 blocked from queue at 10.786507192272103
+2024-01-27 00:17:52,425 - INFO - Customer 55 blocked from queue at 10.791818216524183
+2024-01-27 00:17:52,458 - INFO - Customer 56 blocked from queue at 10.8764410678713
+2024-01-27 00:17:52,492 - INFO - Customer 40 finished at 11.019085991141083
+2024-01-27 00:17:52,593 - INFO - Customer 45 began being served at 11.019085991141083
+2024-01-27 00:17:52,661 - INFO - Customer 57 admitted into queue at 11.16139563959262
+2024-01-27 00:17:52,762 - INFO - Customer 58 blocked from queue at 11.17128405793136
+2024-01-27 00:17:52,795 - INFO - Customer 45 finished at 11.232053630194557
+2024-01-27 00:17:52,891 - INFO - Customer 46 began being served at 11.232053630194557
+2024-01-27 00:17:52,954 - INFO - Customer 59 admitted into queue at 11.29845264646638
+2024-01-27 00:17:53,047 - INFO - Customer 44 finished at 11.443080217480128
+2024-01-27 00:17:53,140 - INFO - Customer 47 began being served at 11.443080217480128
+2024-01-27 00:17:53,201 - INFO - Customer 47 finished at 11.484068312431127
+2024-01-27 00:17:53,294 - INFO - Customer 48 began being served at 11.484068312431127
+2024-01-27 00:17:53,355 - INFO - Customer 46 finished at 11.510283404087968
+2024-01-27 00:17:53,452 - INFO - Customer 50 began being served at 11.510283404087968
+2024-01-27 00:17:53,515 - INFO - Customer 60 admitted into queue at 11.53010540308516
+2024-01-27 00:17:53,609 - INFO - Customer 50 finished at 11.698044488763912
+2024-01-27 00:17:53,705 - INFO - Customer 51 began being served at 11.698044488763912
+2024-01-27 00:17:53,768 - INFO - Customer 61 admitted into queue at 11.814098921800516
+2024-01-27 00:17:53,862 - INFO - Customer 51 finished at 11.833961136735407
+2024-01-27 00:17:53,956 - INFO - Customer 52 began being served at 11.833961136735407
+2024-01-27 00:17:54,020 - INFO - Customer 48 finished at 11.965822863320911
+2024-01-27 00:17:54,115 - INFO - Customer 53 began being served at 11.965822863320911
+2024-01-27 00:17:54,179 - INFO - Customer 62 admitted into queue at 12.039361020823806
+2024-01-27 00:17:54,299 - INFO - Customer 63 admitted into queue at 12.13811645047768
+2024-01-27 00:17:54,396 - INFO - Customer 52 finished at 12.204340655918404
+2024-01-27 00:17:54,513 - INFO - Customer 57 began being served at 12.204340655918404
+2024-01-27 00:17:54,575 - INFO - Customer 64 admitted into queue at 12.242839251465892
+2024-01-27 00:17:54,672 - INFO - Customer 65 admitted into queue at 12.274649361890974
+2024-01-27 00:17:54,765 - INFO - Customer 53 finished at 12.279712694875608
+2024-01-27 00:17:54,860 - INFO - Customer 59 began being served at 12.279712694875608
+2024-01-27 00:17:54,923 - INFO - Customer 66 admitted into queue at 12.398882603775382
+2024-01-27 00:17:55,019 - INFO - Customer 67 admitted into queue at 12.474954063837123
+2024-01-27 00:17:55,116 - INFO - Customer 59 finished at 12.480851450209585
+2024-01-27 00:17:55,213 - INFO - Customer 60 began being served at 12.480851450209585
+2024-01-27 00:17:55,279 - INFO - Customer 60 finished at 12.483853674452556
+2024-01-27 00:17:55,378 - INFO - Customer 61 began being served at 12.483853674452556
+2024-01-27 00:17:55,444 - INFO - Customer 68 admitted into queue at 12.829443720000132
+2024-01-27 00:17:55,559 - INFO - Customer 69 admitted into queue at 12.830006627018506
+2024-01-27 00:17:55,657 - INFO - Customer 70 blocked from queue at 13.089947760294221
+2024-01-27 00:17:55,692 - INFO - Customer 71 blocked from queue at 13.450501587244037
+2024-01-27 00:17:55,724 - INFO - Customer 57 finished at 13.520824632410633
+2024-01-27 00:17:55,818 - INFO - Customer 62 began being served at 13.520824632410633
+2024-01-27 00:17:55,896 - INFO - Customer 72 admitted into queue at 13.598891436622035
+2024-01-27 00:17:56,008 - INFO - Customer 73 blocked from queue at 13.710778913642137
+2024-01-27 00:17:56,053 - INFO - Customer 74 blocked from queue at 13.74572563462059
+2024-01-27 00:17:56,100 - INFO - Customer 61 finished at 13.771126720787505
+2024-01-27 00:17:56,200 - INFO - Customer 63 began being served at 13.771126720787505
+2024-01-27 00:17:56,266 - INFO - Customer 63 finished at 13.839810145849064
+2024-01-27 00:17:56,362 - INFO - Customer 64 began being served at 13.839810145849064
+2024-01-27 00:17:56,425 - INFO - Customer 75 admitted into queue at 13.973430742259513
+2024-01-27 00:17:56,522 - INFO - Customer 64 finished at 13.989736137283533
+2024-01-27 00:17:56,622 - INFO - Customer 65 began being served at 13.989736137283533
+2024-01-27 00:17:56,689 - INFO - Customer 65 finished at 14.066469654839388
+2024-01-27 00:17:56,791 - INFO - Customer 66 began being served at 14.066469654839388
+2024-01-27 00:17:56,858 - INFO - Customer 66 finished at 14.090295747013213
+2024-01-27 00:17:56,959 - INFO - Customer 67 began being served at 14.090295747013213
+2024-01-27 00:17:57,026 - INFO - Customer 76 admitted into queue at 14.117011091899089
+2024-01-27 00:17:57,125 - INFO - Customer 62 finished at 14.14291495060343
+2024-01-27 00:17:57,227 - INFO - Customer 68 began being served at 14.14291495060343
+2024-01-27 00:17:57,293 - INFO - Customer 77 admitted into queue at 14.14540574529038
+2024-01-27 00:17:57,395 - INFO - Customer 68 finished at 14.147105737883793
+2024-01-27 00:17:57,495 - INFO - Customer 69 began being served at 14.147105737883793
+2024-01-27 00:17:57,558 - INFO - Customer 69 finished at 14.296686168862113
+2024-01-27 00:17:57,655 - INFO - Customer 72 began being served at 14.296686168862113
+2024-01-27 00:17:57,720 - INFO - Customer 67 finished at 14.37556070667758
+2024-01-27 00:17:57,819 - INFO - Customer 75 began being served at 14.37556070667758
+2024-01-27 00:17:57,888 - INFO - Customer 72 finished at 14.391007564504552
+2024-01-27 00:17:57,986 - INFO - Customer 76 began being served at 14.391007564504552
+2024-01-27 00:17:58,050 - INFO - Customer 78 admitted into queue at 14.496417061232927
+2024-01-27 00:17:58,148 - INFO - Customer 79 admitted into queue at 14.513968637510407
+2024-01-27 00:17:58,248 - INFO - Customer 75 finished at 14.689770911950037
+2024-01-27 00:17:58,348 - INFO - Customer 77 began being served at 14.689770911950037
+2024-01-27 00:17:58,413 - INFO - Customer 77 finished at 14.782371076651357
+2024-01-27 00:17:58,515 - INFO - Customer 78 began being served at 14.782371076651357
+2024-01-27 00:17:58,599 - INFO - Customer 78 finished at 14.815488644762885
+2024-01-27 00:17:58,700 - INFO - Customer 79 began being served at 14.815488644762885
+2024-01-27 00:17:58,769 - INFO - Customer 80 admitted into queue at 14.865748951774592
+2024-01-27 00:17:58,867 - INFO - Customer 81 admitted into queue at 14.901370168605672
+2024-01-27 00:17:58,970 - INFO - Customer 82 admitted into queue at 14.979570865249682
+2024-01-27 00:17:59,068 - INFO - Customer 83 admitted into queue at 14.998633018823165
+2024-01-27 00:17:59,170 - INFO - Customer 76 finished at 15.060968595820931
+2024-01-27 00:17:59,278 - INFO - Customer 80 began being served at 15.060968595820931
+2024-01-27 00:17:59,345 - INFO - Customer 79 finished at 15.212682467012893
+2024-01-27 00:17:59,444 - INFO - Customer 81 began being served at 15.212682467012893
+2024-01-27 00:17:59,513 - INFO - Customer 81 finished at 15.21311601214853
+2024-01-27 00:17:59,614 - INFO - Customer 82 began being served at 15.21311601214853
+2024-01-27 00:17:59,683 - INFO - Customer 84 admitted into queue at 15.234037306860776
+2024-01-27 00:17:59,785 - INFO - Customer 80 finished at 15.523981885483769
+2024-01-27 00:17:59,886 - INFO - Customer 83 began being served at 15.523981885483769
+2024-01-27 00:17:59,955 - INFO - Customer 83 finished at 15.610363051591445
+2024-01-27 00:18:00,056 - INFO - Customer 84 began being served at 15.610363051591445
+2024-01-27 00:18:00,126 - INFO - Customer 85 admitted into queue at 15.647711461122576
+2024-01-27 00:18:00,225 - INFO - Customer 82 finished at 15.780630013777577
+2024-01-27 00:18:00,331 - INFO - Customer 85 began being served at 15.780630013777577
+2024-01-27 00:18:00,398 - INFO - Customer 86 admitted into queue at 15.873704185234791
+2024-01-27 00:18:00,500 - INFO - Customer 87 admitted into queue at 15.971928736503193
+2024-01-27 00:18:00,600 - INFO - Customer 88 admitted into queue at 16.010555182069716
+2024-01-27 00:18:00,704 - INFO - Customer 85 finished at 16.30641709127069
+2024-01-27 00:18:00,803 - INFO - Customer 86 began being served at 16.30641709127069
+2024-01-27 00:18:00,871 - INFO - Customer 84 finished at 16.31315107755881
+2024-01-27 00:18:00,973 - INFO - Customer 87 began being served at 16.31315107755881
+2024-01-27 00:18:01,041 - INFO - Customer 87 finished at 16.3501658895455
+2024-01-27 00:18:01,143 - INFO - Customer 88 began being served at 16.3501658895455
+2024-01-27 00:18:01,209 - INFO - Customer 86 finished at 16.70835292188056
+2024-01-27 00:18:01,314 - INFO - Customer 89 admitted into queue at 16.841053973705044
+2024-01-27 00:18:01,416 - INFO - Customer 89 began being served at 16.841053973705044
+2024-01-27 00:18:01,487 - INFO - Customer 90 admitted into queue at 17.041370992986373
+2024-01-27 00:18:01,590 - INFO - Customer 91 admitted into queue at 17.164468236978028
+2024-01-27 00:18:01,692 - INFO - Customer 92 admitted into queue at 17.206358034678782
+2024-01-27 00:18:01,797 - INFO - Customer 89 finished at 17.207724428287257
+2024-01-27 00:18:01,898 - INFO - Customer 90 began being served at 17.207724428287257
+2024-01-27 00:18:01,988 - INFO - Customer 88 finished at 17.342089954352005
+2024-01-27 00:18:02,090 - INFO - Customer 91 began being served at 17.342089954352005
+2024-01-27 00:18:02,159 - INFO - Customer 93 admitted into queue at 17.419383660147723
+2024-01-27 00:18:02,260 - INFO - Customer 94 admitted into queue at 17.4466107493443
+2024-01-27 00:18:02,359 - INFO - Customer 91 finished at 17.448929873343296
+2024-01-27 00:18:02,461 - INFO - Customer 92 began being served at 17.448929873343296
+2024-01-27 00:18:02,528 - INFO - Customer 95 admitted into queue at 17.479881806829347
+2024-01-27 00:18:02,629 - INFO - Customer 90 finished at 17.600111117530275
+2024-01-27 00:18:02,730 - INFO - Customer 93 began being served at 17.600111117530275
+2024-01-27 00:18:02,797 - INFO - Customer 96 admitted into queue at 17.75831488646831
+2024-01-27 00:18:02,898 - INFO - Customer 97 admitted into queue at 17.87614221273622
+2024-01-27 00:18:03,000 - INFO - Customer 98 admitted into queue at 17.908139595311177
+2024-01-27 00:18:03,099 - INFO - Customer 99 admitted into queue at 18.054713342048764
+2024-01-27 00:18:03,201 - INFO - Customer 100 admitted into queue at 18.365084085780552
+2024-01-27 00:18:03,302 - INFO - Customer 92 finished at 18.482720709378388
+2024-01-27 00:18:03,404 - INFO - Customer 94 began being served at 18.482720709378388
+2024-01-27 00:18:03,471 - INFO - Customer 93 finished at 18.51990447555957
+2024-01-27 00:18:03,573 - INFO - Customer 95 began being served at 18.51990447555957
+2024-01-27 00:18:03,643 - INFO - Customer 101 admitted into queue at 18.611538195021094
+2024-01-27 00:18:03,744 - INFO - Customer 94 finished at 18.688015229445707
+2024-01-27 00:18:03,848 - INFO - Customer 96 began being served at 18.688015229445707
+2024-01-27 00:18:03,916 - INFO - Customer 96 finished at 18.69907451582055
+2024-01-27 00:18:04,023 - INFO - Customer 97 began being served at 18.69907451582055
+2024-01-27 00:18:04,089 - INFO - Customer 95 finished at 18.88899843461587
+2024-01-27 00:18:04,193 - INFO - Customer 98 began being served at 18.88899843461587
+2024-01-27 00:18:04,285 - INFO - Customer 102 admitted into queue at 18.94714989787412
+2024-01-27 00:18:04,387 - INFO - Customer 103 admitted into queue at 19.019966592320948
+2024-01-27 00:18:04,489 - INFO - Customer 97 finished at 19.060759758307263
+2024-01-27 00:18:04,594 - INFO - Customer 99 began being served at 19.060759758307263
+2024-01-27 00:18:04,663 - INFO - Customer 99 finished at 19.08773098575804
+2024-01-27 00:18:04,769 - INFO - Customer 100 began being served at 19.08773098575804
+2024-01-27 00:18:04,831 - INFO - Customer 104 admitted into queue at 19.08967299225478
+2024-01-27 00:18:04,925 - INFO - Customer 105 admitted into queue at 19.236272857857525
+2024-01-27 00:18:05,019 - INFO - Customer 106 admitted into queue at 19.343132179553564
+2024-01-27 00:18:05,119 - INFO - Customer 100 finished at 19.390622691224785
+2024-01-27 00:18:05,216 - INFO - Customer 101 began being served at 19.390622691224785
+2024-01-27 00:18:05,281 - INFO - Customer 101 finished at 19.408716409163997
+2024-01-27 00:18:05,376 - INFO - Customer 102 began being served at 19.408716409163997
+2024-01-27 00:18:05,439 - INFO - Customer 98 finished at 19.49289954919271
+2024-01-27 00:18:05,535 - INFO - Customer 103 began being served at 19.49289954919271
+2024-01-27 00:18:05,598 - INFO - Customer 102 finished at 19.709804184952027
+2024-01-27 00:18:05,692 - INFO - Customer 104 began being served at 19.709804184952027
+2024-01-27 00:18:05,755 - INFO - Customer 104 finished at 19.72905897070337
+2024-01-27 00:18:05,850 - INFO - Customer 105 began being served at 19.72905897070337
+2024-01-27 00:18:05,911 - INFO - Customer 105 finished at 19.768069189882254
+2024-01-27 00:18:06,029 - INFO - Customer 106 began being served at 19.768069189882254
+2024-01-27 00:18:06,093 - INFO - Customer 106 finished at 19.77492932841846
+2024-01-27 00:18:06,187 - INFO - Customer 103 finished at 19.81637304322014
+2024-01-27 00:18:06,283 - INFO - Customer 107 admitted into queue at 19.832969408272703
+2024-01-27 00:18:06,379 - INFO - Customer 107 began being served at 19.832969408272703
+2024-01-27 00:18:06,442 - INFO - Customer 107 finished at 19.885242279390653
+2024-01-27 00:18:06,582 - INFO - Customer 108 admitted into queue at 19.93559977174133
+2024-01-27 00:18:06,693 - INFO - Customer 108 began being served at 19.93559977174133
+2024-01-27 00:18:06,757 - INFO - Customer 108 finished at 19.94557598266527
+2024-01-27 00:18:06,866 - INFO - Customer 109 admitted into queue at 19.958453361394685
+2024-01-27 00:18:06,990 - INFO - Customer 109 began being served at 19.958453361394685
+2024-01-27 00:18:07,057 - INFO - Customer 110 admitted into queue at 20.073344219455183
+2024-01-27 00:18:07,158 - INFO - Customer 110 began being served at 20.073344219455183
+2024-01-27 00:18:07,221 - INFO - Customer 111 admitted into queue at 20.07426479056394
+2024-01-27 00:18:07,319 - INFO - Customer 112 admitted into queue at 20.33201392057243
+2024-01-27 00:18:07,426 - INFO - Customer 113 admitted into queue at 20.417337123998358
+2024-01-27 00:18:07,535 - INFO - Customer 114 admitted into queue at 20.46381773509729
+2024-01-27 00:18:07,635 - INFO - Customer 115 admitted into queue at 20.74235588346246
+2024-01-27 00:18:07,735 - INFO - Customer 116 admitted into queue at 20.9440131862318
+2024-01-27 00:18:07,834 - INFO - Customer 109 finished at 20.980559503451826
+2024-01-27 00:18:07,944 - INFO - Customer 111 began being served at 20.980559503451826
+2024-01-27 00:18:08,021 - INFO - Customer 111 finished at 21.012387467392887
+2024-01-27 00:18:08,120 - INFO - Customer 112 began being served at 21.012387467392887
+2024-01-27 00:18:08,189 - INFO - Customer 117 admitted into queue at 21.08792383832366
+2024-01-27 00:18:08,303 - INFO - Customer 118 admitted into queue at 21.176825558286957
+2024-01-27 00:18:08,416 - INFO - Customer 119 admitted into queue at 21.281144596170883
+2024-01-27 00:18:08,516 - INFO - Customer 120 admitted into queue at 21.3058956507175
+2024-01-27 00:18:08,614 - INFO - Customer 110 finished at 21.565777473435162
+2024-01-27 00:18:08,736 - INFO - Customer 113 began being served at 21.565777473435162
+2024-01-27 00:18:08,801 - INFO - Customer 121 admitted into queue at 21.714716000053194
+2024-01-27 00:18:08,913 - INFO - Customer 122 blocked from queue at 21.790067525016166
+2024-01-27 00:18:08,959 - INFO - Customer 123 blocked from queue at 21.903014444830937
+2024-01-27 00:18:09,006 - INFO - Customer 113 finished at 21.981892666966374
+2024-01-27 00:18:09,117 - INFO - Customer 114 began being served at 21.981892666966374
+2024-01-27 00:18:09,183 - INFO - Customer 124 admitted into queue at 22.00587112375127
+2024-01-27 00:18:09,286 - INFO - Customer 112 finished at 22.203702201290433
+2024-01-27 00:18:09,395 - INFO - Customer 115 began being served at 22.203702201290433
+2024-01-27 00:18:09,464 - INFO - Customer 115 finished at 22.3426626117363
+2024-01-27 00:18:09,564 - INFO - Customer 116 began being served at 22.3426626117363
+2024-01-27 00:18:09,631 - INFO - Customer 116 finished at 22.448631472338594
+2024-01-27 00:18:09,732 - INFO - Customer 117 began being served at 22.448631472338594
+2024-01-27 00:18:09,800 - INFO - Customer 114 finished at 22.555353640027693
+2024-01-27 00:18:09,913 - INFO - Customer 118 began being served at 22.555353640027693
+2024-01-27 00:18:09,977 - INFO - Customer 118 finished at 22.560903017437436
+2024-01-27 00:18:10,074 - INFO - Customer 119 began being served at 22.560903017437436
+2024-01-27 00:18:10,139 - INFO - Customer 125 admitted into queue at 22.58301356223539
+2024-01-27 00:18:10,237 - INFO - Customer 119 finished at 22.604108650036824
+2024-01-27 00:18:10,333 - INFO - Customer 120 began being served at 22.604108650036824
+2024-01-27 00:18:10,398 - INFO - Customer 126 admitted into queue at 22.86558451912706
+2024-01-27 00:18:10,499 - INFO - Customer 117 finished at 23.175882125403174
+2024-01-27 00:18:10,594 - INFO - Customer 121 began being served at 23.175882125403174
+2024-01-27 00:18:10,659 - INFO - Customer 120 finished at 23.25264356307638
+2024-01-27 00:18:10,755 - INFO - Customer 124 began being served at 23.25264356307638
+2024-01-27 00:18:10,820 - INFO - Customer 127 admitted into queue at 23.354421859540835
+2024-01-27 00:18:10,936 - INFO - Customer 121 finished at 23.449248746579528
+2024-01-27 00:18:11,031 - INFO - Customer 125 began being served at 23.449248746579528
+2024-01-27 00:18:11,096 - INFO - Customer 125 finished at 23.48587989424715
+2024-01-27 00:18:11,192 - INFO - Customer 126 began being served at 23.48587989424715
+2024-01-27 00:18:11,257 - INFO - Customer 126 finished at 23.593352418868687
+2024-01-27 00:18:11,357 - INFO - Customer 127 began being served at 23.593352418868687
+2024-01-27 00:18:11,422 - INFO - Customer 128 admitted into queue at 23.74872158768411
+2024-01-27 00:18:11,520 - INFO - Customer 127 finished at 23.769415525551707
+2024-01-27 00:18:11,640 - INFO - Customer 128 began being served at 23.769415525551707
+2024-01-27 00:18:11,705 - INFO - Customer 124 finished at 23.780803087209996
+2024-01-27 00:18:11,802 - INFO - Customer 129 admitted into queue at 23.83384846162072
+2024-01-27 00:18:11,922 - INFO - Customer 129 began being served at 23.83384846162072
+2024-01-27 00:18:11,987 - INFO - Customer 129 finished at 24.045880112963886
+2024-01-27 00:18:12,083 - INFO - Customer 128 finished at 24.050488380801625
+2024-01-27 00:18:12,184 - INFO - Customer 130 admitted into queue at 24.09471709768614
+2024-01-27 00:18:12,284 - INFO - Customer 130 began being served at 24.09471709768614
+2024-01-27 00:18:12,349 - INFO - Customer 131 admitted into queue at 24.14339983255889
+2024-01-27 00:18:12,453 - INFO - Customer 131 began being served at 24.14339983255889
+2024-01-27 00:18:12,519 - INFO - Customer 131 finished at 24.28239664964514
+2024-01-27 00:18:12,620 - INFO - Customer 130 finished at 24.403718528976196
+2024-01-27 00:18:12,721 - INFO - Customer 132 admitted into queue at 24.59810432974461
+2024-01-27 00:18:12,832 - INFO - Customer 132 began being served at 24.59810432974461
+2024-01-27 00:18:12,916 - INFO - Customer 133 admitted into queue at 24.89596518936133
+2024-01-27 00:18:13,018 - INFO - Customer 133 began being served at 24.89596518936133
+2024-01-27 00:18:13,083 - INFO - Customer 133 finished at 24.903051388219442
+2024-01-27 00:18:13,183 - INFO - Customer 132 finished at 25.114100255205877
+2024-01-27 00:18:13,284 - INFO - Customer 134 admitted into queue at 25.22042627368887
+2024-01-27 00:18:13,381 - INFO - Customer 134 began being served at 25.22042627368887
+2024-01-27 00:18:13,450 - INFO - Customer 135 admitted into queue at 25.375130992219844
+2024-01-27 00:18:13,550 - INFO - Customer 135 began being served at 25.375130992219844
+2024-01-27 00:18:13,616 - INFO - Customer 134 finished at 25.421103102882878
+2024-01-27 00:18:13,720 - INFO - Customer 136 admitted into queue at 25.635027255933682
+2024-01-27 00:18:13,819 - INFO - Customer 136 began being served at 25.635027255933682
+2024-01-27 00:18:13,886 - INFO - Customer 137 admitted into queue at 25.796389159015657
+2024-01-27 00:18:13,987 - INFO - Customer 135 finished at 25.82325939077138
+2024-01-27 00:18:14,087 - INFO - Customer 137 began being served at 25.82325939077138
+2024-01-27 00:18:14,155 - INFO - Customer 136 finished at 25.83317151242569
+2024-01-27 00:18:14,255 - INFO - Customer 138 admitted into queue at 25.94907361729836
+2024-01-27 00:18:14,356 - INFO - Customer 138 began being served at 25.94907361729836
+2024-01-27 00:18:14,424 - INFO - Customer 137 finished at 26.0418454815887
+2024-01-27 00:18:14,551 - INFO - Customer 139 admitted into queue at 26.184340437147732
+2024-01-27 00:18:14,655 - INFO - Customer 139 began being served at 26.184340437147732
+2024-01-27 00:18:14,722 - INFO - Customer 138 finished at 26.198779876979454
+2024-01-27 00:18:14,821 - INFO - Customer 140 admitted into queue at 26.27277616263612
+2024-01-27 00:18:14,924 - INFO - Customer 140 began being served at 26.27277616263612
+2024-01-27 00:18:14,991 - INFO - Customer 141 admitted into queue at 26.359342176662498
+2024-01-27 00:18:15,093 - INFO - Customer 142 admitted into queue at 26.531704351249726
+2024-01-27 00:18:15,193 - INFO - Customer 143 admitted into queue at 26.685203725837198
+2024-01-27 00:18:15,292 - INFO - Customer 144 admitted into queue at 26.734763342515933
+2024-01-27 00:18:15,396 - INFO - Customer 145 admitted into queue at 26.937071068234417
+2024-01-27 00:18:15,497 - INFO - Customer 140 finished at 26.968774280406425
+2024-01-27 00:18:15,598 - INFO - Customer 141 began being served at 26.968774280406425
+2024-01-27 00:18:15,667 - INFO - Customer 139 finished at 27.034565278070342
+2024-01-27 00:18:15,769 - INFO - Customer 142 began being served at 27.034565278070342
+2024-01-27 00:18:15,836 - INFO - Customer 141 finished at 27.0391110599549
+2024-01-27 00:18:15,938 - INFO - Customer 143 began being served at 27.0391110599549
+2024-01-27 00:18:16,004 - INFO - Customer 143 finished at 27.052426826183808
+2024-01-27 00:18:16,123 - INFO - Customer 144 began being served at 27.052426826183808
+2024-01-27 00:18:16,191 - INFO - Customer 142 finished at 27.174215067094707
+2024-01-27 00:18:16,294 - INFO - Customer 145 began being served at 27.174215067094707
+2024-01-27 00:18:16,363 - INFO - Customer 146 admitted into queue at 27.233221143749397
+2024-01-27 00:18:16,462 - INFO - Customer 147 admitted into queue at 27.27354260046975
+2024-01-27 00:18:16,564 - INFO - Customer 145 finished at 27.27606710930779
+2024-01-27 00:18:16,661 - INFO - Customer 146 began being served at 27.27606710930779
+2024-01-27 00:18:16,730 - INFO - Customer 146 finished at 27.337036201852108
+2024-01-27 00:18:16,830 - INFO - Customer 147 began being served at 27.337036201852108
+2024-01-27 00:18:16,896 - INFO - Customer 148 admitted into queue at 27.512221520485614
+2024-01-27 00:18:17,013 - INFO - Customer 149 admitted into queue at 27.63502709316682
+2024-01-27 00:18:17,112 - INFO - Customer 147 finished at 27.6483189286394
+2024-01-27 00:18:17,210 - INFO - Customer 148 began being served at 27.6483189286394
+2024-01-27 00:18:17,278 - INFO - Customer 150 admitted into queue at 27.730945003119352
+2024-01-27 00:18:17,377 - INFO - Customer 151 admitted into queue at 27.765871830256735
+2024-01-27 00:18:17,474 - INFO - Customer 144 finished at 27.81967325467162
+2024-01-27 00:18:17,604 - INFO - Customer 149 began being served at 27.81967325467162
+2024-01-27 00:18:17,674 - INFO - Customer 149 finished at 27.879559326446586
+2024-01-27 00:18:17,772 - INFO - Customer 150 began being served at 27.879559326446586
+2024-01-27 00:18:17,839 - INFO - Customer 150 finished at 27.881704195939964
+2024-01-27 00:18:17,943 - INFO - Customer 151 began being served at 27.881704195939964
+2024-01-27 00:18:18,012 - INFO - Customer 152 admitted into queue at 27.905969227904865
+2024-01-27 00:18:18,113 - INFO - Customer 151 finished at 27.963468695117196
+2024-01-27 00:18:18,216 - INFO - Customer 152 began being served at 27.963468695117196
+2024-01-27 00:18:18,283 - INFO - Customer 148 finished at 27.964275211138638
+2024-01-27 00:18:18,385 - INFO - Customer 152 finished at 27.974763870741548
+2024-01-27 00:18:18,487 - INFO - Customer 153 admitted into queue at 28.037597802564925
+2024-01-27 00:18:18,592 - INFO - Customer 153 began being served at 28.037597802564925
+2024-01-27 00:18:18,662 - INFO - Customer 153 finished at 28.087103121099236
+2024-01-27 00:18:18,768 - INFO - Customer 154 admitted into queue at 28.164691079543978
+2024-01-27 00:18:18,871 - INFO - Customer 154 began being served at 28.164691079543978
+2024-01-27 00:18:18,941 - INFO - Customer 154 finished at 28.194920340373788
+2024-01-27 00:18:19,068 - INFO - Customer 155 admitted into queue at 28.378704127436894
+2024-01-27 00:18:19,172 - INFO - Customer 155 began being served at 28.378704127436894
+2024-01-27 00:18:19,242 - INFO - Customer 156 admitted into queue at 28.43075056142867
+2024-01-27 00:18:19,347 - INFO - Customer 156 began being served at 28.43075056142867
+2024-01-27 00:18:19,416 - INFO - Customer 157 admitted into queue at 28.53425993637996
+2024-01-27 00:18:19,521 - INFO - Customer 158 admitted into queue at 28.55246844667175
+2024-01-27 00:18:19,625 - INFO - Customer 155 finished at 28.892829350053358
+2024-01-27 00:18:19,728 - INFO - Customer 157 began being served at 28.892829350053358
+2024-01-27 00:18:19,797 - INFO - Customer 159 admitted into queue at 28.978876600973226
+2024-01-27 00:18:19,923 - INFO - Customer 160 admitted into queue at 28.995349301561976
+2024-01-27 00:18:20,027 - INFO - Customer 157 finished at 29.00424498024601
+2024-01-27 00:18:20,129 - INFO - Customer 158 began being served at 29.00424498024601
+2024-01-27 00:18:20,198 - INFO - Customer 161 admitted into queue at 29.097922471005024
+2024-01-27 00:18:20,302 - INFO - Customer 162 admitted into queue at 29.208185430793502
+2024-01-27 00:18:20,408 - INFO - Customer 158 finished at 29.391110316469387
+2024-01-27 00:18:20,510 - INFO - Customer 159 began being served at 29.391110316469387
+2024-01-27 00:18:20,581 - INFO - Customer 159 finished at 29.40840089276254
+2024-01-27 00:18:20,685 - INFO - Customer 160 began being served at 29.40840089276254
+2024-01-27 00:18:20,755 - INFO - Customer 163 admitted into queue at 29.413429226023062
+2024-01-27 00:18:20,858 - INFO - Customer 164 admitted into queue at 29.43591784248231
+2024-01-27 00:18:20,961 - INFO - Customer 165 admitted into queue at 29.50099333703002
+2024-01-27 00:18:21,066 - INFO - Customer 160 finished at 29.509095742487712
+2024-01-27 00:18:21,167 - INFO - Customer 161 began being served at 29.509095742487712
+2024-01-27 00:18:21,260 - INFO - Customer 156 finished at 29.57519673489926
+2024-01-27 00:18:21,363 - INFO - Customer 162 began being served at 29.57519673489926
+2024-01-27 00:18:21,430 - INFO - Customer 162 finished at 29.618605804569803
+2024-01-27 00:18:21,535 - INFO - Customer 163 began being served at 29.618605804569803
+2024-01-27 00:18:21,601 - INFO - Customer 161 finished at 29.646810237630316
+2024-01-27 00:18:21,705 - INFO - Customer 164 began being served at 29.646810237630316
+2024-01-27 00:18:21,772 - INFO - Customer 163 finished at 29.677425534067684
+2024-01-27 00:18:21,878 - INFO - Customer 165 began being served at 29.677425534067684
+2024-01-27 00:18:21,945 - INFO - Customer 165 finished at 29.692501204259234
+2024-01-27 00:18:22,050 - INFO - Customer 164 finished at 29.708081302327383
+2024-01-27 00:18:22,152 - INFO - Customer 166 admitted into queue at 30.001240486152728
+2024-01-27 00:18:22,255 - INFO - Customer 166 began being served at 30.001240486152728
+2024-01-27 00:18:22,324 - INFO - Customer 167 admitted into queue at 30.027564762386966
+2024-01-27 00:18:22,445 - INFO - Customer 167 began being served at 30.027564762386966
+2024-01-27 00:18:22,515 - INFO - Customer 166 finished at 30.091439183928443
+2024-01-27 00:18:22,616 - INFO - Customer 167 finished at 30.160172054365173
+2024-01-27 00:18:22,720 - INFO - Customer 168 admitted into queue at 30.428441602691695
+2024-01-27 00:18:22,821 - INFO - Customer 168 began being served at 30.428441602691695
+2024-01-27 00:18:22,891 - INFO - Customer 169 admitted into queue at 30.444877287206914
+2024-01-27 00:18:22,992 - INFO - Customer 169 began being served at 30.444877287206914
+2024-01-27 00:18:23,062 - INFO - Customer 170 admitted into queue at 30.550804497173093
+2024-01-27 00:18:23,175 - INFO - Customer 168 finished at 30.57909259055765
+2024-01-27 00:18:23,276 - INFO - Customer 170 began being served at 30.57909259055765
+2024-01-27 00:18:23,345 - INFO - Customer 170 finished at 30.61725818752732
+2024-01-27 00:18:23,471 - INFO - Customer 169 finished at 30.671733006561045
+2024-01-27 00:18:23,577 - INFO - Customer 171 admitted into queue at 30.793694002714524
+2024-01-27 00:18:23,684 - INFO - Customer 171 began being served at 30.793694002714524
+2024-01-27 00:18:23,754 - INFO - Customer 171 finished at 30.800136305086845
+2024-01-27 00:18:23,862 - INFO - Customer 172 admitted into queue at 30.977459707752693
+2024-01-27 00:18:23,968 - INFO - Customer 172 began being served at 30.977459707752693
+2024-01-27 00:18:24,037 - INFO - Customer 173 admitted into queue at 31.124395517895255
+2024-01-27 00:18:24,144 - INFO - Customer 173 began being served at 31.124395517895255
+2024-01-27 00:18:24,211 - INFO - Customer 173 finished at 31.179491081384437
+2024-01-27 00:18:24,318 - INFO - Customer 172 finished at 31.54811838476026
+2024-01-27 00:18:24,443 - INFO - Customer 174 admitted into queue at 31.89973860920482
+2024-01-27 00:18:24,547 - INFO - Customer 174 began being served at 31.89973860920482
+2024-01-27 00:18:24,617 - INFO - Customer 174 finished at 31.98400023756778
+2024-01-27 00:18:24,724 - INFO - Customer 175 admitted into queue at 32.27075156712389
+2024-01-27 00:18:24,828 - INFO - Customer 175 began being served at 32.27075156712389
+2024-01-27 00:18:24,898 - INFO - Customer 176 admitted into queue at 32.31803372961844
+2024-01-27 00:18:25,003 - INFO - Customer 176 began being served at 32.31803372961844
+2024-01-27 00:18:25,074 - INFO - Customer 177 admitted into queue at 32.501268967580046
+2024-01-27 00:18:25,179 - INFO - Customer 178 admitted into queue at 32.635354432965144
+2024-01-27 00:18:25,282 - INFO - Customer 179 admitted into queue at 32.73032584554217
+2024-01-27 00:18:25,390 - INFO - Customer 180 admitted into queue at 32.89545939712811
+2024-01-27 00:18:25,517 - INFO - Customer 181 admitted into queue at 32.90434880328899
+2024-01-27 00:18:25,625 - INFO - Customer 182 admitted into queue at 32.93125794697999
+2024-01-27 00:18:25,729 - INFO - Customer 183 admitted into queue at 33.13682331041791
+2024-01-27 00:18:25,835 - INFO - Customer 176 finished at 33.21617265681417
+2024-01-27 00:18:25,943 - INFO - Customer 177 began being served at 33.21617265681417
+2024-01-27 00:18:26,015 - INFO - Customer 184 admitted into queue at 33.293123139620576
+2024-01-27 00:18:26,120 - INFO - Customer 177 finished at 33.45020119911801
+2024-01-27 00:18:26,225 - INFO - Customer 178 began being served at 33.45020119911801
+2024-01-27 00:18:26,295 - INFO - Customer 185 admitted into queue at 33.46142006029273
+2024-01-27 00:18:26,403 - INFO - Customer 178 finished at 33.57556408682133
+2024-01-27 00:18:26,510 - INFO - Customer 179 began being served at 33.57556408682133
+2024-01-27 00:18:26,601 - INFO - Customer 186 admitted into queue at 33.66923427227669
+2024-01-27 00:18:26,704 - INFO - Customer 179 finished at 33.795396727761904
+2024-01-27 00:18:26,807 - INFO - Customer 180 began being served at 33.795396727761904
+2024-01-27 00:18:26,876 - INFO - Customer 175 finished at 33.887100019679586
+2024-01-27 00:18:26,982 - INFO - Customer 181 began being served at 33.887100019679586
+2024-01-27 00:18:27,050 - INFO - Customer 187 admitted into queue at 33.94151240430528
+2024-01-27 00:18:27,153 - INFO - Customer 180 finished at 34.02460936774522
+2024-01-27 00:18:27,255 - INFO - Customer 182 began being served at 34.02460936774522
+2024-01-27 00:18:27,348 - INFO - Customer 182 finished at 34.076609386298784
+2024-01-27 00:18:27,453 - INFO - Customer 183 began being served at 34.076609386298784
+2024-01-27 00:18:27,522 - INFO - Customer 188 admitted into queue at 34.14496528381048
+2024-01-27 00:18:27,628 - INFO - Customer 181 finished at 34.29567607010036
+2024-01-27 00:18:27,733 - INFO - Customer 184 began being served at 34.29567607010036
+2024-01-27 00:18:27,801 - INFO - Customer 189 admitted into queue at 34.32753015729214
+2024-01-27 00:18:27,905 - INFO - Customer 190 admitted into queue at 34.33999427564658
+2024-01-27 00:18:28,011 - INFO - Customer 184 finished at 34.375592430240076
+2024-01-27 00:18:28,112 - INFO - Customer 185 began being served at 34.375592430240076
+2024-01-27 00:18:28,183 - INFO - Customer 183 finished at 34.56809052612816
+2024-01-27 00:18:28,284 - INFO - Customer 186 began being served at 34.56809052612816
+2024-01-27 00:18:28,353 - INFO - Customer 185 finished at 34.638474640234676
+2024-01-27 00:18:28,455 - INFO - Customer 187 began being served at 34.638474640234676
+2024-01-27 00:18:28,544 - INFO - Customer 186 finished at 34.67310682299603
+2024-01-27 00:18:28,646 - INFO - Customer 188 began being served at 34.67310682299603
+2024-01-27 00:18:28,714 - INFO - Customer 191 admitted into queue at 34.67325369720959
+2024-01-27 00:18:28,818 - INFO - Customer 192 admitted into queue at 34.69365550525832
+2024-01-27 00:18:28,923 - INFO - Customer 193 admitted into queue at 34.725375579865435
+2024-01-27 00:18:29,026 - INFO - Customer 187 finished at 34.973793510677865
+2024-01-27 00:18:29,128 - INFO - Customer 189 began being served at 34.973793510677865
+2024-01-27 00:18:29,198 - INFO - Customer 194 admitted into queue at 35.023177327762994
+2024-01-27 00:18:29,306 - INFO - Customer 188 finished at 35.08803780334541
+2024-01-27 00:18:29,417 - INFO - Customer 190 began being served at 35.08803780334541
+2024-01-27 00:18:29,488 - INFO - Customer 189 finished at 35.1182953158635
+2024-01-27 00:18:29,595 - INFO - Customer 191 began being served at 35.1182953158635
+2024-01-27 00:18:29,684 - INFO - Customer 191 finished at 35.13346674672834
+2024-01-27 00:18:29,788 - INFO - Customer 192 began being served at 35.13346674672834
+2024-01-27 00:18:29,860 - INFO - Customer 190 finished at 35.18730810793431
+2024-01-27 00:18:29,961 - INFO - Customer 193 began being served at 35.18730810793431
+2024-01-27 00:18:30,030 - INFO - Customer 193 finished at 35.24716021174001
+2024-01-27 00:18:30,131 - INFO - Customer 194 began being served at 35.24716021174001
+2024-01-27 00:18:30,200 - INFO - Customer 195 admitted into queue at 35.2771912115871
+2024-01-27 00:18:30,303 - INFO - Customer 196 admitted into queue at 35.36363574129201
+2024-01-27 00:18:30,409 - INFO - Customer 197 admitted into queue at 35.37491099701686
+2024-01-27 00:18:30,512 - INFO - Customer 194 finished at 35.63158710182541
+2024-01-27 00:18:30,614 - INFO - Customer 195 began being served at 35.63158710182541
+2024-01-27 00:18:30,681 - INFO - Customer 198 admitted into queue at 35.64710176834292
+2024-01-27 00:18:30,784 - INFO - Customer 192 finished at 35.705201019992415
+2024-01-27 00:18:30,907 - INFO - Customer 196 began being served at 35.705201019992415
+2024-01-27 00:18:30,975 - INFO - Customer 196 finished at 35.78012674542786
+2024-01-27 00:18:31,080 - INFO - Customer 197 began being served at 35.78012674542786
+2024-01-27 00:18:31,150 - INFO - Customer 199 admitted into queue at 35.793411714332116
+2024-01-27 00:18:31,253 - INFO - Customer 197 finished at 35.86194784231799
+2024-01-27 00:18:31,358 - INFO - Customer 198 began being served at 35.86194784231799
+2024-01-27 00:18:31,427 - INFO - Customer 195 finished at 35.87607477131204
+2024-01-27 00:18:31,535 - INFO - Customer 199 began being served at 35.87607477131204
+2024-01-27 00:18:31,627 - INFO - Customer 200 admitted into queue at 35.91662869970313
+2024-01-27 00:18:31,735 - INFO - Customer 199 finished at 35.96940317516863
+2024-01-27 00:18:31,854 - INFO - Customer 200 began being served at 35.96940317516863
+2024-01-27 00:18:31,927 - INFO - Customer 201 admitted into queue at 36.00941736851569
+2024-01-27 00:18:32,035 - INFO - Customer 198 finished at 36.01348327454028
+2024-01-27 00:18:32,143 - INFO - Customer 201 began being served at 36.01348327454028
+2024-01-27 00:18:32,213 - INFO - Customer 202 admitted into queue at 36.187666515516185
+2024-01-27 00:18:32,347 - INFO - Customer 201 finished at 36.473457433014225
+2024-01-27 00:18:32,461 - INFO - Customer 202 began being served at 36.473457433014225
+2024-01-27 00:18:32,532 - INFO - Customer 200 finished at 36.47628974635164
+2024-01-27 00:18:32,644 - INFO - Customer 202 finished at 36.64530594495063
+2024-01-27 00:18:32,753 - INFO - Customer 203 admitted into queue at 36.670119892806966

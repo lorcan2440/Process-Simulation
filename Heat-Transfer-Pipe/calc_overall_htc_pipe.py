@@ -95,45 +95,49 @@ def R_total(T1: float, T2: float, print_props: bool = False) -> list[float]:
 
 # Calculate heat transfer rate using iterative solution, recalculating fluid properties at new temperatures
 # Initial guesses for boundary temperatures: T1 = T_STEAM and T2 = T_WATER
-T1 = T_STEAM
-T2 = T_WATER
-props = {'T1': [], 'T2': [], 'Q_dot': [], 'R_total': []}
+T1 = 400  # could also just use T_STEAM
+T2 = 350  # could also just use T_WATER
+props = {'T1': [], 'T2': [], 'Q_dot': [], 'R_total': [], 'U_overall': []}
 for i in range(10):
     R_in, R_out, R_tot = R_total(T1, T2)
+    U_overall = 1 / (2 * np.pi * R_PIPE_OUTER * L_PIPE * R_tot)
     Q_dot = (T_STEAM - T_WATER) / R_tot
     props['T1'].append(T1)
     props['T2'].append(T2)
     props['Q_dot'].append(Q_dot)
     props['R_total'].append(R_tot)
-    print(f'T_1 = {T1}, T_2 = {T2}, Q_dot = {Q_dot}, R_total = {R_tot}')
+    props['U_overall'].append(U_overall)
+    print(f'T_1 = {T1}, T_2 = {T2}, Q_dot = {Q_dot}, R_total = {R_tot}, U_overall = {U_overall}')
     print('----------------')
-    #print(f'R_in = {R_in(T_film_in(T1))}, R_pipe = {R_pipe}, R_out = {R_out(T_film_out(T2))}')
-    # Update T1 and T2
+    # Update T1 and T2 and recalculate properties
     T1 = T_STEAM - Q_dot * R_in
     T2 = T_WATER + Q_dot * R_out
 
 # Plot convergence results in 4 subplots
 fig, axs = plt.subplots(2, 2, figsize=(7, 7), sharex=True)
-axs[0, 0].plot(props['T1'])
-axs[0, 0].set_title(r'$T_1$: inner wall temperature')
+axs[0, 0].plot(props['T1'], label=r'$T_1$ (inner wall)')
+axs[0, 0].plot(props['T2'], label=r'$T_2$ (outer wall)')
+axs[0, 0].set_title(r'$T_1$ and $T_2$: Wall temperatures')
 axs[0, 0].set_xlabel('Iteration #')
-axs[0, 0].set_ylabel('Temperature [K]')
+axs[0, 0].set_ylabel('Wall temperature [K]')
+axs[0, 0].legend()
 
-axs[0, 1].plot(props['T2'])
-axs[0, 1].set_title(r'$T_2$: outer wall temperature')
+axs[0, 1].plot(props['Q_dot'])
+axs[0, 1].set_title(r'$\dot{Q}$: heat transfer rate')
 axs[0, 1].set_xlabel('Iteration #')
-axs[0, 1].set_ylabel('Temperature [K]')
+axs[0, 1].set_ylabel('Heat transfer rate [W]')
 
-axs[1, 0].plot(props['Q_dot'])
-axs[1, 0].set_title(r'$\dot{Q}$: heat transfer rate')
+axs[1, 0].plot(props['R_total'])
+axs[1, 0].set_title(r'$R_{total}$: total thermal resistance')
 axs[1, 0].set_xlabel('Iteration #')
-axs[1, 0].set_ylabel('Heat transfer rate [W]')
+axs[1, 0].set_ylabel(r'Thermal resistance [$K W^{-1}$]')
+#axs[1, 0].set_yscale('log')
 
-axs[1, 1].plot(props['R_total'])
-axs[1, 1].set_title(r'$R_{total}$: total thermal resistance')
+axs[1, 1].plot(props['U_overall'])
+axs[1, 1].set_title(r'$U_{overall}$: overall heat transfer coefficient')
 axs[1, 1].set_xlabel('Iteration #')
-axs[1, 1].set_ylabel(r'Thermal resistance [$K W^{-1}$]')
-axs[1, 1].set_yscale('log')
+axs[1, 1].set_ylabel(r'Overall HTC (outer wall) [$W m^{-2} K^{-1}$]')
+#axs[1, 1].set_yscale('log')
 
 for ax in axs.flat:
     ax.xaxis.set_major_locator(plt.MaxNLocator(integer=True))
