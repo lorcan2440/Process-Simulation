@@ -99,7 +99,7 @@ T1 = 400  # could also just use T_STEAM
 T2 = 350  # could also just use T_WATER
 props = {'T1': [], 'T2': [], 'Q_dot': [], 'R_total': [], 'U_overall': []}
 for i in range(10):
-    R_in, R_out, R_tot = R_total(T1, T2)
+    R_in, R_out, R_tot = R_total(T1, T2, print_props=True)
     U_overall = 1 / (2 * np.pi * R_PIPE_OUTER * L_PIPE * R_tot)
     Q_dot = (T_STEAM - T_WATER) / R_tot
     props['T1'].append(T1)
