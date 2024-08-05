@@ -8,6 +8,8 @@ The gas outlet of the HRSG is exhausted to the atmosphere, and the heat rejected
 
 CoolProp is used to model accurate fluid properties at varying temperatures, pressures and states.
 
+![image](https://github.com/user-attachments/assets/ff905b89-21bb-4f00-8a7d-7bcaa73fafb0)
+
 Done:
 
 - [x] Solve all states and properties of CCGT
